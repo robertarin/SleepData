@@ -1,19 +1,15 @@
-
-/*
- * GET home page.
- */
-
 exports.view = function(req, res){
-  res.render('index', {
+  res.render('Science', {
+  	'pageName': "Science",
   	'links': [
-	  	{	'name': 'Tasks',
+		{	'name':	'Science',	
+			'image':	'science.jpg',	
+			'id':	'science'
+		},	
+		{	'name': 'Tasks',
 	  		'image': 'tasks.jpg',
 	  		'id': 'task'
 	  	},
-		{	'name':	'Science',	
-			'image':	'science.jpg',	
-			'id':	'tasks'
-		},	
 		{	'name':	'Alarms',	
 			'image':	'alarms.jpg',	
 			'id':	'alarms'	
