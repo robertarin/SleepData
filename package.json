@@ -1,0 +1,20 @@
+{
+  "name": "SleepData",
+  "description": "SleepData",
+  "version": "0.0.1",
+  "author": "Arin",
+
+  "repository": {
+  	"type": "git",
+  	"url": "https://github.com/robertarin/SleepData"
+  },
+  "license": "MIT",
+
+  "main": "server.js",
+  "dependencies": {
+    "express": "3.x"
+  },
+  "engines": {
+  	"node": "0.10.x"
+  }
+}
