@@ -59,3 +59,12 @@ li a:hover {
 .active {
     background-color: #4CAF50;
 }
+
+.data {
+    position: relative;
+    background: none;
+}
+
+.data p {
+     color: #6e6e6e;
+}
