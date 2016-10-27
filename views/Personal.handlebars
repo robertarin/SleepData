@@ -3,12 +3,13 @@
   <head>
 
     <ul class = "topnav">  
-      <li> <a class ="active" href="/science">Science</a> </li>
+      <li> <a href="home">Home</a> </li>
       <li> <a href="/tasks">Tasks</a> </li>
-      <li> <a href="/alarms">Alarms</a> </li>
+      <li> <a class ="active" href="/personal">Personal</a> </li>
+      <li> <a href="/community">Community</a></li>
     </ul>
 
-    <title>SCIENCE</title>
+    <title>Personal</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -23,26 +24,22 @@
     <![endif]-->
   </head>
   <body>
-    <div class="container" >
-      <div class="data" id = "yourData">
-        <a href="#" class="thumbnail">
-          <h1>Your Data</h1>
-          <p>check out your own sleep data or something</p>
-        </a>
-      </div>
+	<!-- this is a comment in HTML -->
+	<div class="container">
 
-      <div class="data" id = "otherData">
-        <a href="#" class="thumbnail">
-          <h1>Analyze other data</h1>
-          <p>do science on other people</p>
-        </a>
-      </div>
+    <div class="jumbotron">
+        <h1>Your data</h1>
+        <img src="images/pie.jpg" alt="Pie chart" class="img">
     </div>
+
+		<div class="jumbotron">
+  			<h1>Alarms</h1>
+        <img src="images/clock.jpg" alt="Alarm clock" class="img">
+		</div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="/js/bootstrap.min.js"></script>
-    <script src="js/page.js"></script>
   </body>
 </html>
