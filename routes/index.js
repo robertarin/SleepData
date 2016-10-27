@@ -1,5 +1,5 @@
 exports.view = function(req, res){
-  res.render('Home', {
+  res.render('home', {
   	'pageName': "home"
   });
 };
