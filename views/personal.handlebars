@@ -7,6 +7,7 @@
       <li> <a href="/tasks">Tasks</a> </li>
       <li> <a class ="active" href="/personal">Personal</a> </li>
       <li> <a href="/community">Community</a></li>
+      <li style="float:right"> <a href="/login">Login</a></li>
     </ul>
 
     <title>Personal</title>
@@ -34,7 +35,15 @@
 
 		<div class="jumbotron">
   			<h1>Alarms</h1>
-        <img src="images/clock.jpg" alt="Alarm clock" class="img">
+        <u1 class="alarms">
+          {{#each alarms}}
+            <li>
+              <div>
+                <p id="oneLine">{{name}}: {{time}}</p>
+              </div>
+            </li>
+          {{/each}}
+        </u1>
 		</div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
