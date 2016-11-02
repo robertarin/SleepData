@@ -14,7 +14,7 @@ exports.viewPage = function(req, res) {
 		{	'name':	'Dinner',	
 			'time':	'5pm',	
 			'id':	'dinnerAlarm'	
-		},
-  	]
+		}
+  		]
 	});
 };
