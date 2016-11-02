@@ -1,3 +1,6 @@
+
+var graphdata = require('../graphdata.json');
+
 exports.viewPage = function(req, res) {
 	var name = req.params.name;
 	res.render(name, {
@@ -15,6 +18,7 @@ exports.viewPage = function(req, res) {
 			'time':	'5pm',	
 			'id':	'dinnerAlarm'	
 		}
-  		]
+  		],
+  		'graphdata': graphdata
 	});
 };

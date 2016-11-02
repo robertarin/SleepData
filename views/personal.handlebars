@@ -28,6 +28,7 @@
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="/js/jquery.canvasjs.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/page.js"></script>
     <script src="/js/bootstrap-clockpicker.js"></script>
@@ -35,15 +36,40 @@
     <title>Personal</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <script type="text/javascript">
+        window.onload = function () {
+          var chart = new CanvasJS.Chart("chartContainer",
+          {
+
+            title:{
+              text: "Sleep Data"
+            },
+            axisX: {
+              interval: 10
+            },
+            data: [
+            {
+              type: "line",
+              dataPoints: [
+                {{#each graphdata}}
+                  { x: {{x}}, y: {{y}} },
+                {{/each}}
+              ]
+            }
+            ]
+
+          });
+          chart.render();
+        }
+        </script>
+
   </head>
   <body>
 	<!-- this is a comment in HTML -->
 	<div class="container">
+    <div id="chartContainer" style="height: 400px; width: 100%;">
+  </div>
 
-    <div class="jumbotron">
-        <h1>Your data</h1>
-        <img src="images/pie.jpg" alt="Pie chart1" class="img">
-    </div>
 
 		<div class="jumbotron">
   			<h1>Alarms</h1>
