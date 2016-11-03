@@ -1,6 +1,7 @@
 
 var personaldata = require('../personaldata.json');
 var communitydata = require('../communitydata.json');
+var lights = require('../lights.json');
 
 exports.viewPage = function(req, res) {
 	var name = req.params.name;
@@ -21,6 +22,7 @@ exports.viewPage = function(req, res) {
 		}
   		],
   		'personaldata': personaldata,
-  		'communitydata': communitydata
+  		'communitydata': communitydata,
+  		'lights': lights
 	});
 };

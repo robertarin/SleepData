@@ -38,11 +38,25 @@
   </head>
   <body>
 	<!-- this is a comment in HTML -->
-	<div class="container">
-		<div class="jumbotron">
-  			<h1>Tasks</h1>
-  			<p>house controlly stuff</p>
-		</div>
+	<div class="row">
+    <div class="col-sm-4">
+      <h1>Temperature</h1>
+      <form>
+        <input type="range" name="points" min="50" max="80">
+      </form>
+    </div>
+    <div class="col-sm-4 lightsClass">
+      <h1>Lights</h1>
+      {{#each lights}}
+      <li>
+        <p>{{name}}</p>
+        <button type="button" class="btn btn-outline-warning" data-toggle="button" aria-pressed="false" autocomplete="off">
+          Switch
+        </button>
+      </li>
+      {{/each}}
+    </div>
+  </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>

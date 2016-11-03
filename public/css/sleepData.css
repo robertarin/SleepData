@@ -21,6 +21,14 @@ img {
     display: inline-block;
 }
 
+.lightsClass li {
+    list-style-type: none;
+}
+
+.lightsClass p {
+    display: inline-block;
+}
+
 .active {
     background-color: #383838;
 }
