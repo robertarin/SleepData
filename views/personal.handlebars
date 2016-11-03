@@ -29,7 +29,7 @@
     <script src="/js/jquery.canvasjs.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/personal.js"></script>
-    <script src="/js/bootstrap-clockpicker.js"></script>
+    <script src="/js/bootstrap-toggle.js"></script>
 
     <title>Personal</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -58,7 +58,7 @@
             {
               type: "area",
               dataPoints: [
-                {{#each graphdata}}
+                {{#each personaldata}}
                   { x: new Date( {{year}}, {{month}}, {{day}} ), y: {{y}} },
                 {{/each}}
               ]
@@ -73,40 +73,31 @@
   </head>
   <body>
 
-  <div id="cover"></div>
-
-	<!-- this is a comment in HTML -->
 	<div class="container">
     <div id="chartContainer" style="height: 400px; width: 100%;">
   </div>
 
-
-		<div class="jumbotron">
-  			<h1>Alarms</h1>
-        <u1 class="alarms" id = "alarms">
-          {{#each alarms}}
-            <li>
-                <p>{{name}}: {{time}}</p>
-                <label class="switch">
-                  <input type="checkbox">
-                  <div class="slider"></div>
-                </label>
-            </li>
-          {{/each}}
-        </u1>
-        <div class="input-append">
-          <input type="text" class="form-control" value="Alarm name" id="alarmName">
-          <input type="time" class="form-control" value="09:30" id="alarmTime">
-          <button class="btn" id="newBtn">New</button>
-        </div>
-        </script>
-  	</div>
+	<h1>Alarms</h1>
+  <u1 class="alarms" id = "alarms">
+    {{#each alarms}}
+      <li>
+        <p>{{name}}: {{time}}</p>
+        <input type="checkbox" checked data-toggle="toggle">
+      </li>
+    {{/each}}
+  </u1>
+  <div class="input-append">
+    <input type="text" class="form-control" value="Alarm name" id="alarmName">
+    <input type="time" class="form-control" value="09:30" id="alarmTime">
+    <button class="btn" id="newBtn">New</button>
+  </div>
+  </script>
 
     <!-- Bootstrap -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
-    <link href="/css/bootstrap-clockpicker.css" rel="stylesheet">
     <link href="/css/sleepData.css" rel="stylesheet">
+    <link href="/css/bootstrap-toggle.css" rel="stylesheet">
     
 
   </body>

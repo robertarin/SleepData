@@ -1,5 +1,6 @@
 
-var graphdata = require('../graphdata.json');
+var personaldata = require('../personaldata.json');
+var communitydata = require('../communitydata.json');
 
 exports.viewPage = function(req, res) {
 	var name = req.params.name;
@@ -8,17 +9,18 @@ exports.viewPage = function(req, res) {
 		'alarms': [
 	  	{	'name': 'Work',
 	  		'time': '7am',
-	  		'id': 'workAlarm'
+	  		'alarmId': 'workAlarm'
 	  	},
 		{	'name':	'Class',	
 			'time': '11am',	
-			'id':	'classAlarm'
+			'alarmId':	'classAlarm'
 		},	
 		{	'name':	'Dinner',	
 			'time':	'5pm',	
-			'id':	'dinnerAlarm'	
+			'alarmId':	'dinnerAlarm'	
 		}
   		],
-  		'graphdata': graphdata
+  		'personaldata': personaldata,
+  		'communitydata': communitydata
 	});
 };

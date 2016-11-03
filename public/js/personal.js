@@ -17,7 +17,7 @@ function newBtn(e) {
 	var name = $("#alarmName").val();
 	var time = $("#alarmTime").val();
 
-	var newAlarmHtml = "<p>"+name+": "+time+"</p> <label class='switch'><input type='checkbox'><div class='slider'></div></label>";
+	var newAlarmHtml = "<p>"+name+": "+time+"</p> <input type='checkbox' checked data-toggle='toggle'>";
 	
 	$("#alarms").append(newAlarmHtml);
 
