@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -13,7 +13,8 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
-            <li> <a class ="active" href="/tasks">Tasks</a> </li>
+            <li> <a href="/personal">Personal</a> </li>
+            <li> <a href="/tasks">Home Tasks</a> </li>
             <li> <a href="/community">Community</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
@@ -22,7 +23,12 @@
         </div>
       </div>
     </nav>
-    <title>Tasks</title>
+
+    <title>Home Tasks</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <div class="page-header">
+      <h1>Home Tasks</h1>
+    </div>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -42,7 +48,7 @@
     <div class="col-sm-4">
       <h1>Temperature</h1>
       <form>
-        <input type="range" name="points" min="50" max="80">
+        <input type="number" name="points" min="50" max="80" value="70">
       </form>
     </div>
     <div class="col-sm-4 lightsClass">

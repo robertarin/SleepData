@@ -9,15 +9,15 @@ exports.viewPage = function(req, res) {
 		'pageName': name,
 		'alarms': [
 	  	{	'name': 'Work',
-	  		'time': '7am',
+	  		'time': '7:00am',
 	  		'alarmId': 'workAlarm'
 	  	},
 		{	'name':	'Class',	
-			'time': '11am',	
+			'time': '11:00am',	
 			'alarmId':	'classAlarm'
 		},	
 		{	'name':	'Dinner',	
-			'time':	'5pm',	
+			'time':	'5:00pm',	
 			'alarmId':	'dinnerAlarm'	
 		}
   		],

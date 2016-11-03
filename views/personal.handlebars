@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -13,7 +13,8 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
-            <li> <a href="/tasks">Tasks</a> </li>
+            <li> <a href="/personal">Personal</a> </li>
+            <li> <a href="/tasks">Home Tasks</a> </li>
             <li> <a href="/community">Community</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
@@ -23,7 +24,6 @@
       </div>
     </nav>
 
-
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="/js/jquery.canvasjs.min.js"></script>
@@ -32,10 +32,9 @@
 
     <title>Personal</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <div class="page-header">
-          <h1>Your data</h1>
-      </div>
+      <h1>Personal</h1>
+    </div>
 
     <script type="text/javascript">
         window.onload = function () {
@@ -68,10 +67,9 @@
           chart.render();
         }
     </script>
-
   </head>
-  <body>
 
+  <body>
 	<div class="container">
     <div id="chartContainer" style="height: 400px; width: 100%;">
   </div>
@@ -97,12 +95,56 @@
     <button type="submit" id="newAlarmBtn" class="btn btn-primary">New alarm</button>
 </form>
 
-<p></p>
+<table class="table table-bordered table-striped table-sm">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Alarm</th>
+      <th>Time</th>
+      <th>Enabled</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Class</td>
+      <td>9:00am</td>
+      <td>
+        <label class="switch">
+          <input type="checkbox" checked>
+          <div class="slider"></div>
+        </label>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Gym</td>
+      <td>11:00am</td>
+      <td>
+        <label class="switch">
+          <input type="checkbox" checked>
+          <div class="slider"></div>
+        </label>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Work</td>
+      <td>2:30pm</td>
+      <td>
+        <label class="switch">
+          <input type="checkbox" checked>
+          <div class="slider"></div>
+        </label>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
+<p></p>
     <!-- Bootstrap -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="/css/sleepData.css" rel="stylesheet">
-
   </body>
 </html>
