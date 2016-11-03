@@ -9,15 +9,17 @@ $(document).ready(function() {
  * Function that is called when the document is ready.
  */
 function initializePage() {
-	$("#newBtn").click(newBtn);
+	$("#newAlarmBtn").click(newAlarmBtn);
 }
 
-function newBtn(e) {
+function newAlarmBtn(e) {
 
-	var name = $("#alarmName").val();
-	var time = $("#alarmTime").val();
+	e.preventDefault();
 
-	var newAlarmHtml = "<p>"+name+": "+time+"</p> <input type='checkbox' checked data-toggle='toggle'>";
+	var name = $("#nameInput").val();
+	var time = $("#timeInput").val();
+
+	var newAlarmHtml = "<li><p>"+name+": "+time+"</p><input type='checkbox' checked></li>";
 	
 	$("#alarms").append(newAlarmHtml);
 
