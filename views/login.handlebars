@@ -9,23 +9,21 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">SleepData</a>
+          <a class="navbar-brand" href="/personal">SleepData</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
-            <li> <a href="/home">Home</a> </li>
             <li> <a href="/tasks">Tasks</a> </li>
-            <li> <a href="/personal">Personal</a> </li>
             <li> <a href="/community">Community</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
             <li><a class ="active" href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
           </ul>
         </div>
       </div>
     </nav>
     <title>Login</title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -34,20 +32,43 @@
 
   </head>
   <body>
-    <p>SleepData Log In</p>
-    <div class="form-group">
-      <input type="text" class="form-control" placeholder="Email" autofocus=true>
+    
+    <div class="page-header">
+      <h1> SleepData Login </h1>
     </div>
-    <div class="form-group">
-      <input type="password" class="form-control" placeholder="Password">
+
+    <div class="alert alert-success fade in" style="display: none" id="loginAlert">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Logged in!</strong> <a href="/personal" class="alert-link">Click here to go to your personal sleep data.</a>
     </div>
-    <button type="button" class="btn btn-default center-block">Login</button>
-    <button type="button" class="btn btn-primary center-block">Sign up</button>
+
+    <div class="alert alert-success fade in" style="display: none" id="signupAlert">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Signed up!</strong> <a href="/personal" class="alert-link">Click here to go to your personal sleep data.</a>
+    </div>
+
+    <div class="alert alert-warning fade in" style="display: none" id="clickedAlert">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>You've already signed up or logged in!</strong> <a href="/personal" class="alert-link">Click here to go to your personal sleep data.</a>
+    </div>
+
+    <div class="form-group">
+      <input type="text" class="form-control" id="emailField" placeholder="Email" autofocus=true>
+      <input type="password" class="form-control" id = "passwordField" placeholder="Password">
+    </div>
+    <div class="text-center">
+      <div class="btn-group btn-group-lg">
+        <button type="button" class="btn btn-default" id="loginButton">Login</button>
+        <button type="button" class="btn btn-primary"id="signupButton">Sign up</button>
+      </div>
+    </div>
+
   </body>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/login.js"></script>
 
 </html>
