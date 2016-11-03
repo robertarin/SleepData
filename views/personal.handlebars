@@ -42,10 +42,15 @@
           {
 
             title:{
-              text: "Sleep Data"
+              text: "Sleep Quality"
             },
             axisX: {
+              title: "Time",
               interval: 10
+            },
+            axisY: {
+              title: "Quality",
+              interval: 25
             },
             data: [
             {
@@ -85,7 +90,7 @@
           {{/each}}
         </u1>
         <div class="input-group clockpicker">
-          <input type="text" class="form-control" value="09:30">
+          <input type="time" class="form-control" value="09:30">
             <span class="input-group-addon">
               <span class="glyphicon glyphicon-time"></span>
           </span>
