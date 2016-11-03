@@ -17,28 +17,10 @@ function initializePage() {
 
 function login(e)
 {	
-	if(clicked == 0){
-		$("#loginAlert").show();
-	}
-	else{
-		$("#loginAlert").hide();
-		$("#signupAlert").hide();
-		$("#clickedAlert").show();
-	}
-
-	clicked = 1;
+	window.location.href = "/personal";
 }
 
 function signup(e)
 {
-	if(clicked == 0){
-		$("#signupAlert").show();
-	}	
-	else{
-		$("#loginAlert").hide();
-		$("#signupAlert").hide();
-		$("#clickedAlert").show();
-	}
-
-	clicked = 1;
+	window.location.href = "/personal";
 }
