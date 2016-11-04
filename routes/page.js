@@ -8,18 +8,18 @@ exports.viewPage = function(req, res) {
 	res.render(name, {
 		'pageName': name,
 		'alarms': [
-	  	{	'name': 'Class',
-	  		'time': '9:00am',
-	  	},
-		{	'name':	'Gym',
-			'time': '11:00am',
-		},	
-		{	'name':	'Work',
-			'time':	'2:30pm',	
-		}
-  		],
-  		'personaldata': personaldata,
-  		'communitydata': communitydata,
-  		'lights': lights
-	});
+		{	'name': 'Class',
+		'time': '9:00am',
+	},
+	{	'name':	'Gym',
+	'time': '11:00am',
+},	
+{	'name':	'Work',
+'time':	'2:30pm',	
+}
+],
+'personaldata': personaldata,
+'communitydata': communitydata,
+'lights': lights
+});
 };
