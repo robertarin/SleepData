@@ -75,71 +75,60 @@
   </div>
 
 	<h1>Alarms</h1>
-  <u1 class="alarms" id = "alarms">
-    {{#each alarms}}
-      <li>
-        <p>{{name}}: {{time}}</p>
-        <input type="checkbox" checked>
-      </li>
-    {{/each}}
-  </u1>
-  <form class="form-inline">
-    <div class="form-group">
-      <label class="sr-only" for="nameInput">Alarm name</label>
-      <input type="text" class="form-control" id="nameInput" placeholder="Enter alarm name">
-    </div>
-    <div class="form-group">
-      <label class="sr-only" for="timeInput">Time</label>
-      <input type="time" class="form-control" id="timeInput" placeholder="Enter alarm time">
-    </div>
-    <button type="submit" id="newAlarmBtn" class="btn btn-primary">New alarm</button>
-</form>
+  <table class="table table-bordered table-striped table-sm" id="alarmTable">
+    <thead>
+      <tr>
+        <th>Alarm</th>
+        <th>Time</th>
+        <th>Enabled</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each alarms}}
+        <tr>
+        <td>{{name}}</td>
+        <td>{{time}}</td>
+        <td>
+          <label class="switch">
+            <input type="checkbox" checked>
+            <div class="slider"></div>
+          </label>
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
 
-<table class="table table-bordered table-striped table-sm">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Alarm</th>
-      <th>Time</th>
-      <th>Enabled</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Class</td>
-      <td>9:00am</td>
-      <td>
-        <label class="switch">
-          <input type="checkbox" checked>
-          <div class="slider"></div>
-        </label>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Gym</td>
-      <td>11:00am</td>
-      <td>
-        <label class="switch">
-          <input type="checkbox" checked>
-          <div class="slider"></div>
-        </label>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Work</td>
-      <td>2:30pm</td>
-      <td>
-        <label class="switch">
-          <input type="checkbox" checked>
-          <div class="slider"></div>
-        </label>
-      </td>
-    </tr>
-  </tbody>
-</table>
+
+<table class="table table-bordered table-striped table-sm" id="alarmTable">
+    <thead>
+      <tr>
+        <th>New Alarm</th>
+        <th>Alarm Time</th>
+        <th>Create</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <td><div class="form-group">
+      <label class="sr-only" for="nameInput">Alarm name</label>
+      <input type="text" class="form-control" id="nameInput" placeholder="Name">
+    </div></td>
+        <td><div class="form-group">
+      <label class="sr-only" for="timeInput">Time</label>
+      <input type="time" class="form-control" id="timeInput">
+    </div></td>
+        <td><button type="submit" id="newAlarmBtn" class="btn btn-primary">New alarm</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <form class="form-inline">
+    
+    
+    
+</form>
 
 <p></p>
     <!-- Bootstrap -->

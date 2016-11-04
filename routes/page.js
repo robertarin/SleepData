@@ -8,17 +8,14 @@ exports.viewPage = function(req, res) {
 	res.render(name, {
 		'pageName': name,
 		'alarms': [
-	  	{	'name': 'Work',
-	  		'time': '7:00am',
-	  		'alarmId': 'workAlarm'
+	  	{	'name': 'Class',
+	  		'time': '9:00am',
 	  	},
-		{	'name':	'Class',	
-			'time': '11:00am',	
-			'alarmId':	'classAlarm'
+		{	'name':	'Gym',
+			'time': '11:00am',
 		},	
-		{	'name':	'Dinner',	
-			'time':	'5:00pm',	
-			'alarmId':	'dinnerAlarm'	
+		{	'name':	'Work',
+			'time':	'2:30pm',	
 		}
   		],
   		'personaldata': personaldata,
