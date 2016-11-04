@@ -61,8 +61,9 @@
     </div>
     <div class="col-sm-4">
       <h2>Temperature</h2>
+      <p id="tempDisplay">70</p>
       <form>
-        <input type="number" name="points" min="50" max="80" value="70">
+        <input type="range" name="points" id="tempRange" min="50" max="80" value="70">
       </form>
     </div>
   </div>
@@ -71,5 +72,6 @@
   <script src="https://code.jquery.com/jquery.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/tasks.js"></script>
 </body>
 </html>

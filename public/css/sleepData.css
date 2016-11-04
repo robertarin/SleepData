@@ -33,8 +33,13 @@ img {
   background-color: #383838;
 }
 
+.alert{
+  display:none;
+}
+
 body {
   padding-top: 70px;
+  padding-bottom: 70px;
 }
 
 /* animated checkbox toggle stuff */
