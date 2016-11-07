@@ -20,6 +20,8 @@ function submitGlobal() {
 	//$("#submitGlobal").hide();
 }
 function submitCase() {
+	var caseRadio = $('#caseRadio input:radio:checked').val();
+	console.log(caseRadio);
 	$("#commentsCase").val("");
 	$("#alertCase").show();
 	//$("#alertCase").hide();

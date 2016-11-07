@@ -94,17 +94,31 @@ window.onload = function () {
     <h2>Case Studies</h2>
     <div id="chartContainer2" style="height: 400px; width: 100%;"></div>
 
-    <div class="form-group">
-      <label for="comment"><div>Rate your agreement with the following statement concerning this individual's sleep data:</div>
-        <div>For this individual, a night of low-quality sleep is generally followed by a night of significantly higher-quality sleep.</div></label>
-        <div>
-          <input type = "radio" name="rating" value="5">Agree Strongly<br>
-          <input type = "radio" name="rating" value="4">Agree<br>
-          <input type = "radio" name="rating" value="3">Neither Agree nor Disagree<br>
-          <input type = "radio" name="rating" value="2">Disagree<br>
-          <input type = "radio" name="rating" value="1">Disagree Strongly<br>
-        </div>
-      </div>
+    <div>
+      <strong>Rate your agreement with the following statement concerning this individual's sleep data:</strong>
+    </div>
+    <div>
+      <strong>For this individual, a night of low-quality sleep is generally followed by a night of significantly higher-quality sleep.</strong>
+    </div>
+
+    <div class="radio-group" id="caseRadio">
+       <div class="radio">
+         <input type="radio" class="toggle" name="caseRadio" value="5">Agree Strongly
+       </div>
+       <div class="radio">
+         <input type="radio" class="toggle" name="caseRadio" value="4"> Agree
+       </div>
+       <div class="radio">
+         <input type="radio" class="toggle" name="caseRadio" value="3"> Neither Agree nor Disagree
+       </div>
+       <div class="radio">
+         <input type="radio" class="toggle" name="caseRadio" value="2"> Disagree
+       </div>
+       <div class="radio">
+          <input type="radio" class="toggle" name="caseRadio" value="1"> Disagree Strongly
+       </div>
+    </div>
+
 
       <div class="form-group">
         <label for="comment">Additional Comments:</label>
