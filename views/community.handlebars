@@ -32,22 +32,13 @@
   <link href="/css/sleepData.css" rel="stylesheet">
 </head>
 
-
 <script type="text/javascript">
 window.onload = function () {
-  var chart = new CanvasJS.Chart("chartContainer",
+  new CanvasJS.Chart("chartContainer",
   {
-
-    title:{
-      text: "Community Sleep Data"
-    },
-    axisX: {
-      title: "Time",
-    },
-    axisY: {
-      title: "Quality",
-      interval: 25
-    },
+    title:{text: "Community Data"},
+    axisX: {title: "Time",},
+    axisY: {title: "Quality", interval: 25},
     data: [
     {
       type: "area",
@@ -58,45 +49,83 @@ window.onload = function () {
       ]
     }
     ]
-  });
-  chart.render();
+  }).render();
+  new CanvasJS.Chart("chartContainer2",
+  {
+    title:{text: "Case Study Data"},
+    axisX: {title: "Time",},
+    axisY: {title: "Quality", interval: 25},
+    data: [
+    {
+      type: "area",
+      dataPoints: [
+      {{#each casedata}}
+      { x: new Date( {{year}}, {{month}}, {{day}} ), y: {{y}} },
+      {{/each}}
+      ]
+    }
+    ]
+  }).render();
 }
+
 </script>
 
 <body>
   <div class="container">
     <h2>Global Data</h2>
-   <div id="chartContainer" style="height: 400px; width: 100%;">
-   </div>
+    <div id="chartContainer" style="height: 400px; width: 100%;"></div>
 
-    <h2>Case Studies</h2>
-
-    <div class="alert alert-success alert-dismissible fade in" role="alert" id="submitAlert">
+    <div class="form-group">
+      <label for="comment">Do you see any interesting trends in this data?</label>
+      <textarea class="form-control" rows="3" id="answerGlobal"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="comment">Additional Comments:</label>
+      <textarea class="form-control" rows="2" id="commentsGlobal"></textarea>
+    </div>
+    <div class="alert alert-success alert-dismissible fade in" role="alert" id="alertGlobal">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
-      <strong>Thanks!</strong> Your analysis will be used for science.
+      Thank you for contributing to the scientific effort!
     </div>
+    <button type="button" id="submitGlobal" class="btn btn-primary">Submit</button>
+
+    <h2>Case Studies</h2>
+    <div id="chartContainer2" style="height: 400px; width: 100%;"></div>
 
     <div class="form-group">
-        <label for="comment">What do you think about all this great community data?:</label>
-        <textarea class="form-control" rows="5" id="comment"></textarea>
+      <label for="comment"><div>Rate your agreement with the following statement concerning this individual's sleep data:</div>
+        <div>For this individual, a night of low-quality sleep is generally followed by a night of significantly higher-quality sleep.</div></label>
+        <div>
+          <input type = "radio" name="rating" value="5">Agree Strongly<br>
+          <input type = "radio" name="rating" value="4">Agree<br>
+          <input type = "radio" name="rating" value="3">Neither Agree nor Disagree<br>
+          <input type = "radio" name="rating" value="2">Disagree<br>
+          <input type = "radio" name="rating" value="1">Disagree Strongly<br>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="comment">Additional Comments:</label>
+        <textarea class="form-control" rows="2" id="commentsCase"></textarea>
+      </div>
+
+      <div class="alert alert-success alert-dismissible fade in" role="alert" id="alertCase">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        Thank you for contributing to the scientific effort!
+      </div>
+      <button type="button" id="submitCase" class="btn btn-primary">Submit</button>
+
+      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      <script src="https://code.jquery.com/jquery.js"></script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="/js/bootstrap.min.js"></script>
+      <script src="/js/jquery.canvasjs.min.js"></script>
+      <script src="/js/community.js"></script>
     </div>
 
-    <div class="form-group">
-        <label for="comment">Put stuff for scientists here:</label>
-        <textarea class="form-control" rows="5" id="comment2"></textarea>
-    </div>
-
-    <button type="button" id="postCommunity" class="btn btn-primary">Post data for community</button>
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/jquery.canvasjs.min.js"></script>
-    <script src="/js/community.js"></script>
-  </div>
-
-</body>
-</html>
+  </body>
+  </html>

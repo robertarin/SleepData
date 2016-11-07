@@ -9,12 +9,18 @@ $(document).ready(function() {
  */
 function initializePage() {
 	$("#submitAlert").hide();
-	$("#postCommunity").click(postCommunity);
-
+	$("#submitGlobal").click(submitGlobal);
+	$("#submitCase").click(submitCase);
 }
 
-function postCommunity() {
-	$("#comment").val("");
-	$("#comment2").val("");
-	$("#submitAlert").show();
+function submitGlobal() {
+	$("#answerGlobal").val("");
+	$("#commentsGlobal").val("");
+	$("#alertGlobal").show();
+	//$("#submitGlobal").hide();
+}
+function submitCase() {
+	$("#commentsCase").val("");
+	$("#alertCase").show();
+	//$("#alertCase").hide();
 }
