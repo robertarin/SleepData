@@ -9,7 +9,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span> 
         </button>
-        <a class="navbar-brand" href="/login">SleepData: Login</a>
+        <a class="navbar-brand" href="/login">SleepData: Profile</a>
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
@@ -25,19 +25,92 @@
     </div>
   </nav>
 
-  <title>Login</title>
+  <title>Profile</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Bootstrap -->
   <link href="/css/bootstrap.min.css" rel="stylesheet">
   <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
   <link href="/css/sleepData.css" rel="stylesheet">
-
 </head>
 
+</body>
+
+<div class="container">
+  <h2>My Info</h2>
+  <div>Date of Birth:
+    <input type="date" id="dob">
+  </div>
+  <div>Sex:
+    <select name="sex">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other" selected="selected">Other</option>
+    </select>
+  </div>
+  <div>Ethnicity:
+    <select name="ethnicity">
+      <option value="black">African or African American</option>
+      <option value="asian">Asian or Pacific Islander</option>
+      <option value="white">Caucasian</option>
+      <option value="hispanic">Hispanic or Latino</option>
+      <option value="middle eastern">Middle Eastern</option>
+      <option value="native">Native American</option>
+      <option value="other" selected="selected">Other</option>
+    </select>
+  </div>
+  <div>Marital Status:
+    <select name="marital">
+      <option value="single">Single</option>
+      <option value="married">Married</option>
+      <option value="separated">Separated</option>
+      <option value="partner">Living Partner</option>
+      <option value="other" selected="selected">Other</option>
+    </select>
+  </div>
+  <div>Education Level:
+    <select name="education">
+      <option value="ms">Some Middle School</option>
+      <option value="msg">Middle School Graduate</option>
+      <option value="hs">Some High School</option>
+      <option value="hsg">High School Graduate</option>
+      <option value="ged">GED</option>
+      <option value="c">Some College</option>
+      <option value="b">Bachelor's Degree</option>
+      <option value="m">Master's Degree</option>
+      <option value="d">Doctorate</option>
+      <option value="other" selected="selected">None of the above</option>
+    </select>
+  </div>
+  <div>Annual Income:
+    <select name="income">
+      <option value="0" selected="selected">None</option>
+      <option value="2">Less than $2,000</option>
+      <option value="5">$2,000-$5,000</option>
+      <option value="10">$5,001-$10,000</option>
+      <option value="25">$10,001-$25,000</option>
+      <option value="50">$25,001-$50,000</option>
+      <option value="100">$50,001-$100,000</option>
+      <option value="200">$100,001-$200,000</option>
+      <option value="500">$200,001-$500,000</option>
+      <option value="1000">$600,001-$1,000,000</option>
+      <option value="1001">More than $1,000,000</option>
+    </select>
+  </div>
+  <div>How many people sleep in your household, including yourself?
+    <input type="number" id="occupants">
+  </div>
+  <div>Are there children in your household?
+    <input type="radio" name="children" value="true">Yes</b>
+    <input type="radio" name="children" value="false">No</br>
+  </div>
+  <div>Opt out of global data collection?
+    <input type="radio" name="children" value="true">Yes</b>
+    <input type="radio" name="children" value="false" checked>No</br>
+  </div>
   
 
-</body>
+</div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://code.jquery.com/jquery.js"></script>
