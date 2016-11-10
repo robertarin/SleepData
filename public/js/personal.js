@@ -47,5 +47,5 @@ $(document).ready(function() {
  	"<tr><td>"+name+"</td><td>"+time+"</td><td><label class=\"switch\"><input type=\"checkbox\" checked><div class=\"slider\"></div></label></td></tr>";
 
  	$("#alarmTable").append(newAlarmHtml);
-
  }
+

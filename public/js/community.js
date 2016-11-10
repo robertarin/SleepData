@@ -8,7 +8,6 @@ $(document).ready(function() {
  * Function that is called when the document is ready.
  */
 function initializePage() {
-	$("#submitAlert").hide();
 	$("#submitGlobal").click(submitGlobal);
 	$("#submitCase").click(submitCase);
 }
@@ -21,8 +20,18 @@ function submitGlobal() {
 }
 function submitCase() {
 	var caseRadio = $('#caseRadio input:radio:checked').val();
-	console.log(caseRadio);
+
+	$("input:radio").prop('checked', false);
+    $("input:radio").closest("label").removeClass("active");
+
 	$("#commentsCase").val("");
 	$("#alertCase").show();
 	//$("#alertCase").hide();
 }
+
+
+$(function(){
+    $("[data-hide]").on("click", function(){
+        $(this).closest("." + $(this).attr("data-hide")).hide();
+    });
+});

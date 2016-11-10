@@ -17,10 +17,26 @@ function initializePage() {
 
 function login(e)
 {	
-	window.location.href = "/personal";
+	var email = $("#emailField").val();
+	var password = $("#passwordField").val();
+
+	if(email != "a" || password != "a")
+	{
+		$("#loginfailure").show();
+		$("#emailField").val("");
+		$("#passwordField").val("");
+	}
+	else
+		window.location.href = "/personal";
 }
 
 function signup(e)
 {
 	window.location.href = "/personal";
 }
+
+$(function(){
+    $("[data-hide]").on("click", function(){
+        $(this).closest("." + $(this).attr("data-hide")).hide();
+    });
+});
