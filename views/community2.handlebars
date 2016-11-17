@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span> 
+        </button>
+        <a class="navbar-brand" href="/community">SleepData: Community</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li> <a href="/personal">Personal</a> </li>
+          <li> <a href="/tasks">Home Tasks</a> </li>
+          <li> <a href="/community">Community</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/profile"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+          <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <title>Community</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+  <link href="/css/sleepData.css" rel="stylesheet">
+</head>
+
+<script type="text/javascript">
+window.onload = function () {
+  new CanvasJS.Chart("chartContainer",
+  {
+    title:{text: "Community Data"},
+    axisX: {title: "Time",},
+    axisY: {title: "Quality", interval: 25},
+    data: [
+    {
+      type: "area",
+      dataPoints: [
+      {{#each communitydata}}
+      { x: new Date( {{year}}, {{month}}, {{day}} ), y: {{y}} },
+      {{/each}}
+      ]
+    }
+    ]
+  }).render();
+  new CanvasJS.Chart("chartContainer2",
+  {
+    title:{text: "Case Study Data"},
+    axisX: {title: "Time",},
+    axisY: {title: "Quality", interval: 25},
+    data: [
+    {
+      type: "area",
+      dataPoints: [
+      {{#each casedata}}
+      { x: new Date( {{year}}, {{month}}, {{day}} ), y: {{y}} },
+      {{/each}}
+      ]
+    }
+    ]
+  }).render();
+}
+
+</script>
+
+<body>
+  <div class="container">
+    <h2>Global Data</h2>
+    <div id="chartContainer" style="height: 400px; width: 100%;"></div>
+
+    <div class="form-group">
+      <label for="comment">Do you see any interesting trends in this data?</label>
+      <textarea class="form-control" rows="3" id="answerGlobal"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="comment">Additional Comments:</label>
+      <textarea class="form-control" rows="2" id="commentsGlobal"></textarea>
+    </div>
+    <div class="alert alert-success alert-dismissible fade in" role="alert" id="alertGlobal">
+      <button type="button" class="close" data-hide="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      Thank you for contributing to the scientific effort!
+    </div>
+    <button type="button" id="submitGlobal" class="btn btn-primary">Submit</button>
+
+    <h2>Case Studies</h2>
+    <div id="chartContainer2" style="height: 400px; width: 100%;"></div>
+
+    <div>
+      <strong>Rate your agreement with the following statement concerning this individual's sleep data:</strong>
+    </div>
+    <div>
+      <strong>For this individual, a night of low-quality sleep is generally followed by a night of significantly higher-quality sleep.</strong>
+    </div>
+
+    <div class="radio-group" id="caseRadio">
+       <div class="radio">
+         <input type="radio" class="toggle" name="caseRadio" value="5">Agree Strongly
+       </div>
+       <div class="radio">
+         <input type="radio" class="toggle" name="caseRadio" value="4"> Agree
+       </div>
+       <div class="radio">
+         <input type="radio" class="toggle" name="caseRadio" value="3"> Neither Agree nor Disagree
+       </div>
+       <div class="radio">
+         <input type="radio" class="toggle" name="caseRadio" value="2"> Disagree
+       </div>
+       <div class="radio">
+          <input type="radio" class="toggle" name="caseRadio" value="1"> Disagree Strongly
+       </div>
+    </div>
+
+
+      <div class="form-group">
+        <label for="comment">Additional Comments:</label>
+        <textarea class="form-control" rows="2" id="commentsCase"></textarea>
+      </div>
+
+      <div class="alert alert-success alert-dismissible fade in" role="alert" id="alertCase">
+        <button type="button" class="close" data-hide="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        Thank you for contributing to the scientific effort!
+      </div>
+      <button type="button" id="submitCase" class="btn btn-primary">Submit</button>
+
+      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      <script src="https://code.jquery.com/jquery.js"></script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="/js/bootstrap.min.js"></script>
+      <script src="/js/jquery.canvasjs.min.js"></script>
+      <script src="/js/community2.js"></script>
+    </div>
+
+  </body>
+  </html>
