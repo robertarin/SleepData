@@ -9,7 +9,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span> 
         </button>
-        <a class="navbar-brand" href="/community2">SleepData: Community</a>
+        <a class="navbar-brand" href="/case2">SleepData: Case Studies</a>
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
@@ -27,7 +27,7 @@
     </div>
   </nav>
 
-  <title>Community</title>
+  <title>Case Studies</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Bootstrap -->
   <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -37,16 +37,16 @@
 
 <script type="text/javascript">
 window.onload = function () {
-  new CanvasJS.Chart("chartContainer",
+  new CanvasJS.Chart("chartContainer2",
   {
-    title:{text: "Community Data"},
+    title:{text: "Case Study Data"},
     axisX: {title: "Time",},
     axisY: {title: "Quality", interval: 25},
     data: [
     {
       type: "area",
       dataPoints: [
-      {{#each communitydata}}
+      {{#each casedata}}
       { x: new Date( {{year}}, {{month}}, {{day}} ), y: {{y}} },
       {{/each}}
       ]
@@ -56,34 +56,55 @@ window.onload = function () {
 }
 
 </script>
-
-<body>
   <div class="container">
-    <h2>Global Data</h2>
-    <div id="chartContainer" style="height: 400px; width: 100%;"></div>
+    <h2>Case Studies</h2>
+    <div id="chartContainer2" style="height: 400px; width: 100%;"></div>
 
-    <div class="form-group">
-      <label for="comment">Do you see any interesting trends in this data?</label>
-      <textarea class="form-control" rows="3" id="answerGlobal"></textarea>
+    <div>
+      <strong>Rate your agreement with the following statement concerning this individual's sleep data:</strong>
     </div>
-    <div class="form-group">
-      <label for="comment">Additional Comments:</label>
-      <textarea class="form-control" rows="2" id="commentsGlobal"></textarea>
+    <div>
+      <strong>For this individual, a night of low-quality sleep is generally followed by a night of significantly higher-quality sleep.</strong>
     </div>
-    <div class="alert alert-success alert-dismissible fade in" role="alert" id="alertGlobal">
-      <button type="button" class="close" data-hide="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-      Thank you for contributing to the scientific effort!
+
+    <div class="radio-group" id="caseRadio">
+       <div class="radio">
+         <input type="radio" class="toggle" name="caseRadio" value="5">Agree Strongly
+       </div>
+       <div class="radio">
+         <input type="radio" class="toggle" name="caseRadio" value="4"> Agree
+       </div>
+       <div class="radio">
+         <input type="radio" class="toggle" name="caseRadio" value="3"> Neither Agree nor Disagree
+       </div>
+       <div class="radio">
+         <input type="radio" class="toggle" name="caseRadio" value="2"> Disagree
+       </div>
+       <div class="radio">
+          <input type="radio" class="toggle" name="caseRadio" value="1"> Disagree Strongly
+       </div>
     </div>
-    <button type="button" id="submitGlobal" class="btn btn-primary">Submit</button>
+
+
+      <div class="form-group">
+        <label for="comment">Additional Comments:</label>
+        <textarea class="form-control" rows="2" id="commentsCase"></textarea>
+      </div>
+
+      <div class="alert alert-success alert-dismissible fade in" role="alert" id="alertCase">
+        <button type="button" class="close" data-hide="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        Thank you for contributing to the scientific effort!
+      </div>
+      <button type="button" id="submitCase" class="btn btn-primary">Submit</button>
 
       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
       <script src="https://code.jquery.com/jquery.js"></script>
       <!-- Include all compiled plugins (below), or include individual files as needed -->
       <script src="/js/bootstrap.min.js"></script>
       <script src="/js/jquery.canvasjs.min.js"></script>
-      <script src="/js/community.js"></script>
+      <script src="/js/case.js"></script>
     </div>
 
   </body>
