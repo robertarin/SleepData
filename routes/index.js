@@ -5,7 +5,7 @@ exports.view = function(req, res){
 };
 
 exports.view2 = function(req, res){
-  res.render('login2', {
-  	'pageName': "login2"
+  res.render('login', {
+  	'pageName': "GOOGLE ANALYTICS IS AWFUL"
   });
 };
