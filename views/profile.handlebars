@@ -15,7 +15,7 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 '" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
 </script><script>utmx('url','A/B');</script>
 <!-- End of Google Analytics Content Experiment code -->
-  
+
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -173,12 +173,22 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
     function gaFun() {
         var optOut = $('#optRadio input:radio:checked').val();
         console.log(optOut);
-
-        ga('send', 'event', 'opt', 'submit', {
+        
+        if (optOut == 'true'){
+          ga('send', 'event', 'opt', 'yes', {
+            hitCallback: function() {
+                console.log("opting out");
+            }
+          });
+        }
+        else{
+          ga('send', 'event', 'opt', 'no', {
           hitCallback: function() {
-              console.log("testing testing");
+              console.log("not opting out");
           }
         });
+        }
+          
     }
 </script>
 
